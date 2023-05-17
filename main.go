@@ -50,7 +50,12 @@ func main() {
 	log.Printf("%d members found.\n", len(members))
 	csvout := csv.NewWriter(outfile)
 	for _, m := range members {
-		csvout.Write([]string{m.FullName, m.Ratings.Display()})
-		//log.Printf("\"%s\", %s\n", m.FullName, m.Ratings.Display())
+		err := csvout.Write([]string{m.FullName, m.Ratings.Display()})
+		if err != nil {
+			log.Fatalf("Error writing to CSV file %v\n", err.Error())
+		}
+		// log.Printf("\"%s\", %s\n", m.FullName, m.Ratings.Display())
 	}
+	csvout.Flush()
+	outfile.Close()
 }
