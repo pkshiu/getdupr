@@ -6,7 +6,14 @@ to a club.
 Usage:
 
 ```
+    # To run with a full go installation:
     go run main.go -username <your_dupr_username> -password <your_dupr_password> -club_id <your club id>
+
+    # To run just the binaries downloaded, e.g. on a windows machine
+    getdupr.exe  -username <your_dupr_username> -password <your_dupr_password> -club_id <your club id>
+
+    # You can copy getdupr.exe to wherever you need, or invoke it with the full directory
+    c:\\where-you-put-the-file/getdupr.exe -username <your_dupr_username> -password <your_dupr_password> -club_id <your club id>
 ```
 
 ## History
