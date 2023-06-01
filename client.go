@@ -173,7 +173,9 @@ func (dc *DUPRClient) LoadTokens() error {
 	// Load token for access without relogging in
 	bytes, err := os.ReadFile("dupr.json")
 	if err != nil {
-		fmt.Println("Unable to load token file!")
+		if !os.IsNotExist(err) {
+			log.Println("Unable to load token file.")
+		}
 		return err
 	}
 

@@ -43,7 +43,7 @@ func main() {
 
 	members, _ := GetMembersByClub(clubId)
 
-	outfile, err := os.Create("./players.csv")
+	outfile, err := os.Create("players.csv")
 	if err != nil {
 		log.Fatalln(err)
 	}
